@@ -3,9 +3,10 @@
 
 # Ссылки
 ## Содержание
-[Запуск](https://github.com/Baboon-Co/iron-forge/main/README.md#запуск)
+[Запуск](https://github.com/Baboon-Co/iron-forge/tree/main?tab=readme-ov-file#запуск)
 
-[После запуска](https://github.com/Baboon-Co/iron-forge/main/README.md#после-запуска)
+[После запуска](https://github.com/Baboon-Co/iron-forge?tab=readme-ov-file#после-запуска)
+
 ## Связанные репозитории
 [Frontend](https://github.com/Baboon-Co/iron-forge-frontend)
 
