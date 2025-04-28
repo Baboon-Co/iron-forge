@@ -1,6 +1,20 @@
 # Iron Forge
 Основной репозиторий с документацией проекта и инструкцией по запуску
 
+# Ссылки
+## Содержание
+[Запуск](https://github.com/Baboon-Co/iron-forge/main/README.md#запуск)
+
+[После запуска](https://github.com/Baboon-Co/iron-forge/main/README.md#после-запуска)
+## Связанные репозитории
+[Frontend](https://github.com/Baboon-Co/iron-forge-frontend)
+
+[Контракты](https://github.com/Baboon-Co/iron-forge-contracts)
+
+[API-Gateway](https://github.com/Baboon-Co/iron-forge-api-gateway)
+
+[Auth-сервис](https://github.com/Baboon-Co/iron-forge-auth-service)
+
 # Запуск
 ## Docker Compose:
 ```yaml
