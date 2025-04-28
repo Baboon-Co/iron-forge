@@ -14,3 +14,11 @@ services:
         ports:
             - "5000:5000"
 ```
+
+# После запуска
+## API-Gateway
+### Основной адрес
+http://localhost:5000/api
+
+### Документация OpenAPI
+http://localhost:5000/api-docs
