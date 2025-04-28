@@ -6,13 +6,11 @@
 ```yaml
 services:
     api-gateway:
-        container-name: api-gateway
-        image: ghcr.io/baboon-co/iron-forge-api-gateway:latest
+        container_name: api-gateway
+        image: ghcr.io/baboon-co/iron-forge/api-gateway:latest
+        environment:
+            ASPNETCORE_ENVIRONMENT: Development
+            ASPNETCORE_HTTP_PORTS: 5000
         ports:
             - "5000:5000"
-            - "5001:5001"
-        
-    auth-service:
-        container-name: auth-service
-        image: ghcr.io/baboon-co/iron-forge-auth:latest
 ```
