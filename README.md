@@ -16,6 +16,12 @@
 
 [Auth-сервис](https://github.com/Baboon-Co/iron-forge-auth-service)
 
+[Profile-сервис](https://github.com/Baboon-Co/iron-forge-profile-service)
+
+[Matchmaking-сервис](https://github.com/Baboon-Co/iron-forge-matchmaking-service)
+
+[Game-сервис](https://github.com/Baboon-Co/iron-forge-game-service)
+
 # Запуск
 ## Docker Compose:
 1. Скачать репозиторий или [docker-compose.yml](./docker-compose.yml)
