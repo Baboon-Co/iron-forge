@@ -1,0 +1,47 @@
+services:
+    api-gateway:
+        container_name: api-gateway
+        image: ghcr.io/baboon-co/iron-forge/api-gateway:latest
+        environment:
+            JWT__SECRET: DEVELOPMENT_SECRET_DEVELOPMENT_SECRET
+            JWT__ISSUER: IronForge-AuthService
+            JWT__AUDIENCE: IronForge-Frontend
+            ASPNETCORE_URLS: http://+:5000
+            SERVICES__AUTHSERVICEADDRESS: http://auth-service:5102
+        ports:
+            - 5000:5000
+            - 5001:5001
+
+    auth-service:
+        container_name: auth-service
+        image: ghcr.io/baboon-co/iron-forge-auth:latest
+        environment:
+            DATABASE__CONNECTIONSTRING: Server=auth-service-db;Port=5432;Database=auth-service;User Id=postgres;Password=postgres;
+            JWT__SECRET: DEVELOPMENT_SECRET_DEVELOPMENT_SECRET
+            JWT__ISSUER: IronForge-AuthService
+            JWT__AUDIENCE: IronForge-Frontend
+            JWT__ACCESSTOKENEXPIRATIONMINUTES: 15
+            JWT__REFRESHTOKENEXPIRATIONMINUTES: 60
+        ports:
+            - 5100:5100
+            - 5101:5101
+            - 5102:5102
+        depends_on:
+            auth-service-db:
+                condition: service_healthy
+
+    auth-service-db:
+        container_name: auth-service-db
+        image: postgres:17.4-alpine3.21
+        environment:
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=postgres
+            - POSTGRES_DB=auth-service
+        ports:
+            - 5432:5432
+        healthcheck:
+            test: [ "CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}" ]
+            interval: 5s
+            retries: 5
+            start_period: 10s
+            timeout: 10s

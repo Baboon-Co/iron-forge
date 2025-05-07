@@ -18,16 +18,14 @@
 
 # Запуск
 ## Docker Compose:
-```yaml
-services:
-    api-gateway:
-        container_name: api-gateway
-        image: ghcr.io/baboon-co/iron-forge/api-gateway:latest
-        environment:
-            ASPNETCORE_ENVIRONMENT: Development
-            ASPNETCORE_HTTP_PORTS: 5000
-        ports:
-            - "5000:5000"
+1. Скачать репозиторий или [docker-compose.yml](./docker-compose.yml)
+2. Из папки запустить команду:
+```bash
+docker compose pull && docker compose up -d
+```
+Либо эту, если хочется смотреть на логи контейнеров прямо в консоли:
+```bash
+docker compose pull && docker compose up
 ```
 
 # После запуска
