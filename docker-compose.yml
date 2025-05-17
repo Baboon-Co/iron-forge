@@ -9,6 +9,7 @@ services:
             JWT__AUDIENCE: IronForge-Frontend
             ASPNETCORE_URLS: http://+:5000
             SERVICES__AUTHSERVICEADDRESS: http://auth-service:5102
+            SERVICES__PROFILESERVICEADDRESS: http://profile-service:5102
         ports:
             - 5000:5000
             - 5001:5001
