@@ -2,6 +2,7 @@ services:
     api-gateway:
         container_name: api-gateway
         image: ghcr.io/baboon-co/iron-forge/api-gateway:latest
+        restart: unless-stopped
         environment:
             JWT__SECRET: DEVELOPMENT_SECRET_DEVELOPMENT_SECRET
             JWT__ISSUER: IronForge-AuthService
@@ -15,6 +16,7 @@ services:
     auth-service:
         container_name: auth-service
         image: ghcr.io/baboon-co/iron-forge-auth:latest
+        restart: unless-stopped
         environment:
             DATABASE__CONNECTIONSTRING: Server=auth-service-db;Port=5432;Database=auth-service;User Id=postgres;Password=postgres;
             JWT__SECRET: DEVELOPMENT_SECRET_DEVELOPMENT_SECRET
